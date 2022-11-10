@@ -1,0 +1,88 @@
+<div class ="col-md-6 offset-md-3">
+<h3 style="color:rgb(0, 0, 0) ;"> Create Tourist</h3>
+<div class="container col-md 6">
+ <form (ngSubmit)="registered()">
+    <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">Id</label>
+        <input type="text" class="form-control" id="Id" name="Id" [(ngModel)]="tourist.id" placeholder="enter your id" required pattern="[0-9]+" maxlength="4" #id="ngModel">
+        <span *ngIf="id.invalid && (id.dirty || id.untouched)">
+          <small class="text-danger" *ngIf="id.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="id.errors?.['pattern']">id is invalid, id should be number</small>
+        </span>
+
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">First Name</label>
+        <input type="text" class="form-control" id="FirstName" name="FirstName" [(ngModel)]="tourist.firstName"placeholder="enter your firstname" required pattern="[A-Za-z]+$" maxlength="15" #firstName="ngModel">
+        <span *ngIf="firstName.invalid && (firstName.dirty || firstName.untouched)">
+          <small class="text-danger" *ngIf="firstName.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="firstName.errors?.['pattern']">FirstName is invalid, Firstname should be alphabet</small>
+        </span>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">Last Name</label>
+        <input type="text" class="form-control" id="LastName" name="LastName" [(ngModel)]="tourist.lastName" placeholder="enter your lastname" required pattern="[A-Za-z]+$" maxlength="12" #lastName="ngModel">
+        <span *ngIf="lastName.invalid && (lastName.dirty || lastName.untouched)">
+          <small class="text-danger" *ngIf="lastName.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="lastName.errors?.['pattern']">LastName is invalid, Lastname should be alphabet</small>
+        </span>
+
+      </div>
+      <div >
+        <label for="exampleFormControlInput1" class="form-label" style="color:rgb(0, 0, 0) ;">
+          Gender
+        </label>
+
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male" [(ngModel)]="tourist.gender">
+        <label class="form-check-label" for="exampleRadios1" style="color:rgb(0, 0, 0) ;">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female" [(ngModel)]="tourist.gender">
+        <label class="form-check-label" for="exampleRadios1" style="color:rgb(0, 0, 0) ;">
+          Female
+        </label>
+      </div>
+      </div>
+      
+      
+
+      
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">Age</label>
+        <input type="text" class="form-control" id="Age" name="Age" [(ngModel)]="tourist.age" placeholder="enter your age" required pattern="[0-9]+" maxlength="2" #age="ngModel">
+        <span *ngIf="age.invalid && (age.dirty || age.untouched)">
+          <small class="text-danger" *ngIf="age.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="age.errors?.['pattern']">Age is invalid, Age should be number</small>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">From Place</label>
+        <input type="text" class="form-control" id="FromPlace" name="FromPlace" [(ngModel)]="tourist.fromPlace"placeholder="enter your fromPlace" required pattern="[A-Za-z]+$" maxlength="12" #fromPlace="ngModel"> 
+        <span *ngIf="fromPlace.invalid && (fromPlace.dirty || fromPlace.untouched)">
+          <small class="text-danger" *ngIf="fromPlace.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="fromPlace.errors?.['pattern']">FromPlace is invalid, FromPlace should be alphabet</small>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:rgb(0, 0, 0) ;">Number of days</label>
+        <input type="text" class="form-control" id="Numberofdays" name="Numberofdays" [(ngModel)]="tourist.numberofdays" placeholder="enter your numberofdays" required pattern="[0-9]+" maxlength="2" #numberofdays="ngModel">
+        <span *ngIf="numberofdays.invalid && (numberofdays.dirty || numberofdays.untouched)">
+          <small class="text-danger" *ngIf="numberofdays.errors?.['required']">this is required feild</small>
+          <small class="text-danger" *ngIf="numberofdays.errors?.['pattern']">numberofdays is invalid, id should be number</small>
+        </span>
+
+
+      </div>
+
+      <button class ="btn btn-success" type = "submit" style="color:rgb(0, 0, 0) ;">Submit</button>
+      
+ </form>    
+
+</div>
+
